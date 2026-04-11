@@ -32,15 +32,18 @@ ssh -i ~/Downloads/tooplateKey.pem azureuser@<PUBLIC_IP>
 
 # ⚙️ 3. Server Setup
 
+```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install nginx unzip wget -y
 sudo systemctl start nginx
 sudo systemctl enable nginx
+```
 
 ---
 
 # 🌐 4. Deploy Tooplate Website
 
+```bash
 cd /tmp
 wget "TOOPLATE_ZIP_URL" -O site.zip
 unzip site.zip
@@ -48,7 +51,7 @@ sudo rm -rf /var/www/html/*
 sudo cp -r TEMPLATE_FOLDER/* /var/www/html/
 sudo chmod -R 755 /var/www/html
 sudo systemctl restart nginx
-
+```
 ---
 
 # 🌍 5. Domain Setup (Name.com)
@@ -77,9 +80,9 @@ All must be set to Source: Any
 ---
 
 # ⚙️ 7. Nginx Domain Configuration
-
+```
 sudo nano /etc/nginx/sites-available/vishdevops.systems
-
+```
 ```
 server {
     listen 80;
@@ -103,12 +106,12 @@ sudo systemctl restart nginx
 ---
 
 # 🔒 8. Enable HTTPS (Certbot)
-
+```
 sudo apt install certbot python3-certbot-nginx -y
 sudo certbot --nginx -d vishdevops.systems -d www.vishdevops.systems
-
+```
 ---
 
 # ✅ Final Result
 
-https://vishdevops.systems
+`https://vishdevops.systems`
