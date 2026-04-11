@@ -24,8 +24,7 @@ This guide documents the complete process of:
 
 # 🔑 2. SSH into VM
 
-chmod 400 ~/Downloads/tooplateKey.pem
-ssh -i ~/Downloads/tooplateKey.pem azureuser@<PUBLIC_IP>
+`ssh -i ~/Downloads/tooplateKey.pem azureuser@<PUBLIC_IP>`
 
 ---
 
