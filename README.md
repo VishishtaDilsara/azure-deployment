@@ -24,7 +24,9 @@ This guide documents the complete process of:
 
 # 🔑 2. SSH into VM
 
-`ssh -i ~/Downloads/tooplateKey.pem azureuser@<PUBLIC_IP>`
+```
+ssh -i ~/Downloads/tooplateKey.pem azureuser@<PUBLIC_IP>
+```
 
 ---
 
