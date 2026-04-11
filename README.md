@@ -49,7 +49,6 @@ wget "TOOPLATE_ZIP_URL" -O site.zip
 unzip site.zip
 sudo rm -rf /var/www/html/*
 sudo cp -r TEMPLATE_FOLDER/* /var/www/html/
-sudo chmod -R 755 /var/www/html
 sudo systemctl restart nginx
 ```
 ---
