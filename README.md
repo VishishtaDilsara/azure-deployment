@@ -57,12 +57,7 @@ sudo systemctl restart nginx
 
 A Record:
 Type: A
-Host: @
-Value: <PUBLIC_IP>
-
-WWW Record:
-Type: A
-Host: www
+Host: <Your Subdomain eg:tooplate>
 Value: <PUBLIC_IP>
 
 ---
@@ -80,12 +75,12 @@ All must be set to Source: Any
 
 # ⚙️ 7. Nginx Domain Configuration
 ```
-sudo nano /etc/nginx/sites-available/vishdevops.systems
+sudo nano /etc/nginx/sites-available/tooplate.vishdevops.systems
 ```
 ```
 server {
     listen 80;
-    server_name vishdevops.systems www.vishdevops.systems;
+    server_name tooplate.vishdevops.systems;
 
     root /var/www/html;
     index index.html index.htm;
@@ -96,7 +91,7 @@ server {
 }
 ```
 ```bash
-sudo ln -s /etc/nginx/sites-available/vishdevops.systems /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/tooplate.vishdevops.systems /etc/nginx/sites-enabled/
 sudo rm /etc/nginx/sites-enabled/default
 sudo nginx -t
 sudo systemctl restart nginx
@@ -107,7 +102,7 @@ sudo systemctl restart nginx
 # 🔒 8. Enable HTTPS (Certbot)
 ```
 sudo apt install certbot python3-certbot-nginx -y
-sudo certbot --nginx -d vishdevops.systems -d www.vishdevops.systems
+sudo certbot --nginx -d tooplate.vishdevops.systems
 ```
 ---
 
