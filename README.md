@@ -57,7 +57,7 @@ sudo systemctl restart nginx
 
 A Record:
 Type: A
-Host: <Your Subdomain eg:tooplate>
+Host: Your Subdomain (tooplate)
 Value: <PUBLIC_IP>
 
 ---
